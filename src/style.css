@@ -95,7 +95,7 @@ form {
     transition: all 300ms ease-in-out;
 }
 
-.weather-forecast .card:hover {
+.card:hover {
     background: rgb(233, 239, 244);
     transition: all 300ms ease-in-out;
 }
@@ -112,14 +112,6 @@ form {
     text-decoration: none;
 }
 
-#fahrenheit-icon:hover {
-    text-decoration: underline;
-}
-
-#celsius-icon:hover {
-    text-decoration: underline;
-}
-
 #current-temp {
     font-size: 40px;
     color: #4444ed;
@@ -133,10 +125,6 @@ form {
     padding: 20px;
 }
 
-#card .col-2 {
-    padding: 4px;
-}
-
 #temperature-icons {
     position: relative;
     top: -24px;
@@ -144,6 +132,25 @@ form {
     font-weight: 400;
     margin-left: 10px;
     line-height: 20px;
+}
+
+#day,
+#forecast-date {
+    opacity: 0.6;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+#fahrenheit-icon:hover {
+    text-decoration: underline;
+}
+
+#celsius-icon:hover {
+    text-decoration: underline;
+}
+
+#card .col-2 {
+    padding: 4px;
 }
 
 header .current-weather {

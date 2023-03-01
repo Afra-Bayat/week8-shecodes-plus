@@ -130,4 +130,28 @@ function displayCelsiusTemperature(event) {
 let celsiusLink = document.querySelector("#celsius-icon");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-let forcastElement = document.querySelector("#weather-forecast");
+//display forecast
+function displayForecat() {
+    let forcastElement = document.querySelector("#weather-forecast");
+    let forecastHTML = `<div class="row" id="card">`;
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+    days.forEach(function Forecat(day) {
+        forecastHTML =
+            forecastHTML +
+            `<div class="col-2">
+                        <div class="card">
+                            <img src="image/cloudy-animation.png" class="card-img-top first-prediction" alt="cloudy" />
+                            <div class="card-body">
+                                <p class="card-text">
+                                    -2°/ <strong>3°</strong> <br />
+                                    <span id="day">${day}</span> <br/> <span id="forecast-date">1/14 </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>`;
+    });
+    forecastHTML = forecastHTML + `</div>`;
+    forcastElement.innerHTML = forecastHTML;
+    console.log(forecastHTML);
+}
+displayForecat();
