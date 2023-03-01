@@ -1,0 +1,169 @@
+hr {
+    color: rgb(68, 68, 237);
+    border-width: 3px;
+}
+
+header {
+    text-align: center;
+    margin: 30px auto 15px auto;
+}
+
+h1 {
+    font-family: "Fredoka One", cursive;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+main {
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+header img {
+    width: 100px;
+    margin-bottom: 5px;
+}
+
+form {
+    margin: 5px auto 50px auto;
+}
+
+.timeline {
+    font-family: "Fredoka One", cursive;
+    color: rgb(101, 100, 100);
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+}
+
+.current-time {
+    font-weight: 400;
+    font-size: 20px;
+    color: black;
+}
+
+.card-img-top {
+    width: 50px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.card-text {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.seperator {
+    font-weight: 400;
+}
+
+.container {
+    padding: 0;
+}
+
+.card {
+    width: 100%;
+    height: auto;
+    padding: 2px;
+}
+
+.open-source {
+    margin-left: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 5px;
+}
+
+.active {
+    color: black;
+    cursor: default;
+    text-decoration: none;
+}
+
+.card-text strong {
+    color: #0c0caf;
+}
+
+.active:hover {
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+}
+
+.weather-forecast .card:hover {
+    background: rgb(233, 239, 244);
+    transition: all 300ms ease-in-out;
+}
+
+.current-weather:first-letter {
+    text-transform: capitalize;
+}
+
+#fahrenheit-icon {
+    text-decoration: none;
+}
+
+#celsius-icon {
+    text-decoration: none;
+}
+
+#fahrenheit-icon:hover {
+    text-decoration: underline;
+}
+
+#celsius-icon:hover {
+    text-decoration: underline;
+}
+
+#current-temp {
+    font-size: 40px;
+    color: #4444ed;
+}
+
+#weather-app {
+    border: 1px solid rgb(202, 194, 194);
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 5px auto;
+    padding: 20px;
+}
+
+#card .col-2 {
+    padding: 4px;
+}
+
+#temperature-icons {
+    position: relative;
+    top: -24px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 10px;
+    line-height: 20px;
+}
+
+header .current-weather {
+    font-family: "PT Mono", monospace;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+form #city-entry {
+    width: 100%;
+    background-color: rgb(230, 240, 247);
+}
+
+form .col-7,
+.col-2,
+.col-3 {
+    padding-right: 0;
+}
+
+main .col-3 {
+    padding: 0;
+    margin: 0;
+}
