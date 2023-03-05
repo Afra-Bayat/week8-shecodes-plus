@@ -134,12 +134,12 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 //receiving forecast  API data
 function getForecast(coordinates) {
   let apiKey = "d84bc80a567f5fbbdba41bbd38db2736";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecat);
 }
 
 //display forecast
-https: function displayForecat(response) {
+function displayForecat() {
   let forcastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row" id="card">`;
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
