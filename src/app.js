@@ -139,26 +139,81 @@ function getForecast(coordinates) {
 }
 
 //display forecast
-function displayForecat() {
+function formatDay(timestamp) {
+  let dateTime = new Date(timestamp * 1000);
+  let day = dateTime.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function formatDate(time) {
+  let dateTime = new Date(time * 1000);
+  let month = dateTime.getMonth() + 1;
+  let date = dateTime.getDate();
+  return month + "/" + date;
+}
+
+function displayForecat(response) {
+  //update hourly forecast
+  let hourForecast = response.data.hourly;
+  //update timeline forecast
+  let timeLineHTML = `<div class="row">`;
+  let timeLineElement = document.querySelector(".timeline");
+  let tempTimelineHTML = `<div class="row">`;
+  let tempTimelineElement = document.querySelector(".tempTimeline");
+  hourForecast.forEach(function displayHourlyForecast(timeline, index) {
+    if (index < 10) {
+      let newTime = new Date(timeline.dt * 1000);
+      let newHour = newTime.getHours();
+      let timeLineTemp = Math.round(timeline.temp);
+      if (newHour > 12 && newHour - 12 >= 10) {
+        newHour = `${newHour - 12} pm`;
+      } else if (newHour > 12 && newHour - 12 <= 9) {
+        newHour = `0${newHour - 12} pm`;
+      } else if (newHour < 9) {
+        newHour = `0${newHour} am`;
+      } else {
+        newHour = `${newHour} am`;
+      }
+      timeLineHTML = timeLineHTML + `<div class="col">${newHour}</div>`;
+      tempTimelineHTML =
+        tempTimelineHTML + `<div class="col">${timeLineTemp}</div>`;
+    }
+  });
+  timeLineHTML = timeLineHTML + `</div>`;
+  tempTimelineHTML = tempTimelineHTML + `</div>`;
+  timeLineElement.innerHTML = timeLineHTML;
+  tempTimelineElement.innerHTML = tempTimelineHTML;
+
+  //update daily forecast
+  let forecast = response.data.daily;
   let forcastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row" id="card">`;
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
-  days.forEach(function Forecat(day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
+  forecast.forEach(function forecast(forecastDay, index) {
+    if (index >= 1 && index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
                         <div class="card">
-                            <img src="image/cloudy-animation.png" class="card-img-top first-prediction" alt="cloudy" />
+                            <img src="http://openweathermap.org/img/wn/${
+                              forecastDay.weather[0].icon
+                            }@2x.png" class="card-img-top first-prediction" alt="cloudy" />
                             <div class="card-body">
-                                <p class="card-text">
-                                    -2°/ <strong>3°</strong> <br />
-                                    <span id="day">${day}</span> <br/> <span id="forecast-date">1/14 </span>
+                                <p class="card-text">${Math.round(
+                                  forecastDay.temp.min
+                                )}°/<strong>${Math.round(
+          forecastDay.temp.max
+        )}</strong><br/><span id="day">${formatDay(
+          forecastDay.dt
+        )}</span> <br/> <span id="forecast-date">${formatDate(
+          forecastDay.dt
+        )} </span>
                                 </p>
                             </div>
                         </div>
                     </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forcastElement.innerHTML = forecastHTML;
 }
-displayForecat();
