@@ -11,7 +11,7 @@ header {
 h1 {
   font-family: "Fredoka One", cursive;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 45px;
 }
 
 main {
@@ -31,21 +31,21 @@ form {
 .timeline {
   font-family: "Fredoka One", cursive;
   color: rgb(101, 100, 100);
-  font-weight: 200;
-  font-size: 14px;
+  font-weight: 300;
+  font-size: 16px;
   text-align: center;
 }
 
 .tempTimeline {
   font-family: "Fredoka One", cursive;
   color: rgb(68, 68, 237);
-  font-weight: 200;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 18px;
   text-align: center;
 }
 
 .card-img-top {
-  width: 60px;
+  width: 90px;
   display: block;
   margin: 0 auto;
   margin-top: 5px;
@@ -54,7 +54,7 @@ form {
 .card-text {
   text-align: center;
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 40px;
 }
 
@@ -70,6 +70,7 @@ form {
   width: 100%;
   height: auto;
   padding: 2px;
+  background: rgb(233, 239, 244);
 }
 
 .open-source {
@@ -100,7 +101,7 @@ form {
 }
 
 .card:hover {
-  background: rgb(233, 239, 244);
+  background: rgb(196, 222, 243);
   transition: all 300ms ease-in-out;
 }
 
@@ -127,6 +128,13 @@ form {
   max-width: 800px;
   margin: 5px auto;
   padding: 20px;
+  background: radial-gradient(
+    1091px at 106.5% 111.5%,
+    rgb(199, 206, 241) 0.1%,
+    rgb(205, 222, 244) 42.2%,
+    rgb(211, 224, 241) 74.3%,
+    rgb(205, 230, 244) 100.2%
+  );
 }
 
 #temperature-icons {
